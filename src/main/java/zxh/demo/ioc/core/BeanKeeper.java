@@ -11,18 +11,19 @@ public interface BeanKeeper {
     /**
      * Register class as a bean
      *
-     * @param clsName class full name
+     * @param fullyQualifiedClassName class full name
      */
-    void register(String clsName);
+    void register(String fullyQualifiedClassName);
 
     /**
      * Fetch bean by bean name
      *
      * @param beanName bean name
+     * @param cls class name
      * @param <T> bean type
      * @return bean
      */
-    <T> Optional<Bean<T>> get(String beanName);
+    <T> Optional<Bean<T>> get(String beanName, Class<T> cls);
 
     /**
      * Un-register a bean
