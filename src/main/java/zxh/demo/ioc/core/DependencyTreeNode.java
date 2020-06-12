@@ -28,6 +28,13 @@ public interface DependencyTreeNode {
     void addParent(DependencyTreeNode node);
 
     /**
+     * Set child node
+     *
+     * @param node node
+     */
+    void setChild(DependencyTreeNode node);
+
+    /**
      * Get next node traverse by LRN
      *
      * @return the next DependencyTreeNode
@@ -36,6 +43,22 @@ public interface DependencyTreeNode {
 
     /**
      * Reset to most left leaf node
+     *
+     * @return first node
      */
-    void reset();
+    DependencyTreeNode getFirstParent();
+
+    /**
+     * Return root child
+     *
+     * @return root child node
+     */
+    DependencyTreeNode getRootChild();
+
+    /**
+     * Return class full name in the node
+     *
+     * @return class full name
+     */
+    String getClassFullName();
 }
