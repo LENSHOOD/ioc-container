@@ -28,13 +28,6 @@ public interface DependencyTreeNode {
     void addParent(DependencyTreeNode node);
 
     /**
-     * Set child node
-     *
-     * @param node node
-     */
-    void setChild(DependencyTreeNode node);
-
-    /**
      * Get next node traverse by LRN
      *
      * @return the next DependencyTreeNode

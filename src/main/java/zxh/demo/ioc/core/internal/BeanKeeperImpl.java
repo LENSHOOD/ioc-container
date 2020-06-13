@@ -28,7 +28,8 @@ public class BeanKeeperImpl implements BeanKeeper {
 
         Constructor<?>[] constructors = cls.getConstructors();
         if (constructors.length == 0) {
-            throw new ClassNotFoundException();
+            throw new IllegalClassForBean(
+                    String.format("The class %s have no public constructor, which not supported by IoC.", cls.getName()));
         }
 
         Constructor<?> leastParamsConstructor = getLeastParameterConstructor(constructors);
