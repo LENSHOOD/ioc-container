@@ -1,5 +1,7 @@
 package zxh.demo.ioc.api;
 
+import java.util.Optional;
+
 /**
  * IoCContext:
  * @author zhangxuhai
@@ -17,7 +19,7 @@ public interface IoCContext {
      * @param beanName bean name
      * @param cls class
      * @param <T> class type
-     * @return bean instance
+     * @return bean instance or empty if not exist
      */
-    <T> T getBeanInstance(String beanName, Class<T> cls);
+    <T> Optional<T> getBeanInstance(String beanName, Class<T> cls);
 }
